@@ -1,0 +1,60 @@
+  <h2 class="form__header">
+    Добавление данных главного врача
+  </h2>
+
+<!-- <mat-dialog-content class="mat-typography"> -->
+  <form [formGroup]="form" (ngSubmit)="submit()" class="add__form">
+    <mat-form-field >
+      <mat-label>Организация здравоохранения</mat-label>
+      <input formControlName="uz" matInput required>
+    </mat-form-field>
+
+    <mat-form-field >
+      <mat-label>Фамилия</mat-label>
+      <input formControlName="lastname" matInput required type="text">
+    </mat-form-field>
+    <mat-form-field >
+      <mat-label>Имя</mat-label>
+      <input formControlName="firstname" matInput required type="text">
+    </mat-form-field>
+
+    <mat-form-field >
+      <mat-label>Отчество</mat-label>
+      <input formControlName="fathername" matInput required type="text">
+    </mat-form-field>
+
+    <mat-form-field >
+      <mat-label>Должность</mat-label>
+      <input formControlName="position" matInput required type="text">
+    </mat-form-field>
+
+    <mat-form-field >
+      <mat-label>Мобильный телефон</mat-label>
+      <input formControlName="mobile" matInput required type="tel" placeholder="375291198809">
+      <mat-icon matSuffix></mat-icon>
+    </mat-form-field>
+
+      <mat-form-field>
+      <mat-label>Дата рождения</mat-label>
+      <input formControlName="birthDate" matInput [matDatepicker]="picker" required >
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker startView="multi-year"></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Дата заключения/окончания контракта</mat-label>
+      <mat-date-range-input [rangePicker]="rangepicker">
+        <input formControlName="conclusionContractDate" required matStartDate required>
+        <input formControlName="expirationContractDate" required matEndDate required>
+      </mat-date-range-input>
+      <mat-datepicker-toggle  matSuffix [for]="rangepicker"></mat-datepicker-toggle>
+      <mat-date-range-picker  startView="multi-year" #rangepicker ></mat-date-range-picker>
+    </mat-form-field>
+
+    <mat-dialog-actions align="center">
+      <button mat-raised-button mat-dialog-close type="submit" mat-dialog-close="true" [disabled]="form.invalid || submitted">Добавить данные</button>
+      <button id="close_btn" mat-raised-button color="Warn" mat-dialog-close="false">Закрыть</button>
+    </mat-dialog-actions>
+  </form>
+<!-- </mat-dialog-content> -->
+

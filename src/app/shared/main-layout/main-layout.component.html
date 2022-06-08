@@ -1,0 +1,16 @@
+<div class="menu">
+  <div class="logo">
+    <h1>Главное управление по здравоохранению</h1>
+  </div>
+  <nav class="menu__list">
+    <ul>
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <a routerLink="" >Главная</a>
+      </li>
+      <li routerLinkActive="active">
+        <a [routerLink]="['/admin']">Войти</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<router-outlet></router-outlet>

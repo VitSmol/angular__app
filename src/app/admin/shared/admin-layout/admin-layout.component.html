@@ -1,0 +1,30 @@
+<div class="menu">
+  <div class="logo">
+    <a routerLink="/">
+      <h1>Главное управление по здравоохранению</h1>
+    </a>
+  </div>
+  <nav class="menu__list">
+    <ul *ngIf="auth.isAuth(); else login">
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <a routerLink="dashboard" >Главная</a>
+      </li>
+      <li routerLinkActive="active">
+        <a [routerLink]="['/admin', 'add']">Добавить</a>
+      </li>
+      <li>
+        <a href="#" (click)="logout($event)">Выйти</a>
+      </li>
+
+    </ul>
+    <ng-template #login>
+      <ul>
+        <li>
+          <a routerLink="/">Назад</a>
+        </li>
+      </ul>
+    </ng-template>
+  </nav>
+</div>
+
+<router-outlet></router-outlet>
