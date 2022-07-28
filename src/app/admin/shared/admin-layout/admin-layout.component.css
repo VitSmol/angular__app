@@ -1,0 +1,13 @@
+.logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu__list ul {
+  padding-left: 0;
+}
+/*# sourceMappingURL=admin-layout.component.css.map */
